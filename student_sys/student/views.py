@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
+from .models import Student
 # Create your views here.
 
 def index(request):
-    words = 'World!'
-    return render(request, 'index.html', context={'words': words}) 
+    students = Student.objects.all()
+    return render(request, 'index.html', context={'students': students}) 
