@@ -30,5 +30,9 @@ class Student(models.Model):
     def get_all(cls):
         return cls.objects.all()
 
+    @property
+    def sex_show(self):
+        return dict(self.SEX_ITEMS)[self.sex]
+
     class Meta:
         verbose_name = verbose_name_plural = '学员信息'
